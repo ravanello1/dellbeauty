@@ -1,5 +1,5 @@
 .introducao-bg {
-  background: #FFFBF2;
+  background: #fffbf2;
 }
 
 .intro {
@@ -22,7 +22,7 @@
 .intro .intro-title {
   font-family: Cookie, cursive;
   margin-bottom: 32px;
-  color: #DDBC72;
+  color: #ddbc72;
   font-size: 7.25em;
   font-weight: 400;
 }
@@ -37,9 +37,9 @@
   font-weight: 500;
   display: inline-block;
   padding: 12px 40px;
-  background: #D4BE88;
+  background: #d4be88;
   border-radius: 4px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, .35);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
   text-transform: uppercase;
   color: black;
   max-width: max-content;
@@ -63,14 +63,16 @@
   .intro {
     margin-top: 35px;
     display: block;
-    font-size: .875em;
+    font-size: 0.875em;
+  }
+  .intro-title {
+    font-size: 0.875em;
   }
   .intro p {
     margin-bottom: 35px;
   }
   .intro-conteudo {
     padding-bottom: 32px;
-
   }
   .intro img {
     width: 360px;
