@@ -1,6 +1,5 @@
 .procedimentos-bg {
-  background: url('../img/image\ 5.png') no-repeat;
-  width: auto;
+  background: url("../img/image\ 5.png") no-repeat;
 }
 
 .procedimentos {
@@ -37,13 +36,13 @@
 }
 
 .procedimentos h3::before {
-    content: "";
-    display: inline-block;
-    height: 8px;
-    width: 12px;
-    margin-right: 8px;
-    background-color: #B2595F;
-    transition: width 0.2s;
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 12px;
+  margin-right: 8px;
+  background-color: #b2595f;
+  transition: width 0.2s;
 }
 
 .procedimentos button img {
@@ -53,15 +52,45 @@
 
 .procedimentos button {
   margin-top: 80px;
-  background: #01B93B;
+  background: #01b93b;
   display: flex;
   align-items: center;
   padding: 12px 40px;
   justify-content: space-between;
   text-transform: uppercase;
   font-size: 1.5em;
-  color: #FFFBF2;
+  color: #fffbf2;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.procedimentos button:hover {
+  background-color: #128c7e;
+}
+
+@media (max-width: 720px) {
+  .procedimentos-bg {
+    padding-bottom: 0px;
+    background: url("../img/image\ 5.png") repeat;
+  }
+  .procedimentos {
+    padding-top: 20px;
+  }
+  .procedimentos ul {
+    display: block;
+  }
+  .procedimentos li {
+    margin-top: 20px;
+  }
+  .procedimentos h3 {
+    margin-top: 12px;
+    margin-bottom: 10px;
+  }
+
+  .procedimentos button {
+    margin-right: 60px;
+    margin-top: 70px;
+  }
 }

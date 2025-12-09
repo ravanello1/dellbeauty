@@ -48,3 +48,21 @@
     color: rgba(0, 0, 0, .5);
     position: absolute;
 }
+
+@media (max-width: 720px) {
+  .depoimento {
+    display: block;
+    overflow: hidden;
+  }
+  .depoimento img {
+    width: 420px;
+    height: 230px;
+    object-fit:cover;
+    margin-left: 50px;
+    margin-top: 20px;
+    border-radius: 4px;
+  }
+  .depoimento p {
+    font-size: .75em;
+  }
+}

@@ -1,4 +1,4 @@
-.header-bg{
+.header-bg {
   background: black;
 }
 
@@ -24,4 +24,20 @@
   padding: 16px 0px;
   position: relative;
   color: white;
+}
+
+@media (max-width: 720px) {
+  .header {
+    gap: 5px;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .menu ul {
+    gap: 30px;
+  }
+
+  .menu a {
+    padding: 10px 0px;
+  }
 }

@@ -31,3 +31,13 @@
   margin-right: 10px;
   background: #B2595F;
 }
+
+@media (max-width: 720px) {
+  .contato-conteudo {
+    display: block;
+    margin-top: 20px;
+  }
+  .dados {
+    margin-top: 30px;
+  }
+}

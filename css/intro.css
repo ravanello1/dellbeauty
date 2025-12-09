@@ -56,8 +56,24 @@
 }
 
 @media (max-width: 720px) {
+  .introducao-bg {
+    padding-top: 35px;
+    padding-bottom: 15px;
+  }
   .intro {
+    margin-top: 35px;
     display: block;
-    
+    font-size: .875em;
+  }
+  .intro p {
+    margin-bottom: 35px;
+  }
+  .intro-conteudo {
+    padding-bottom: 32px;
+
+  }
+  .intro img {
+    width: 360px;
+    margin-bottom: 35px;
   }
 }
