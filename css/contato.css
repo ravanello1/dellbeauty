@@ -1,0 +1,33 @@
+.contato {
+  margin-top: 90px;
+  margin-bottom: 80px;
+}
+
+.contato-conteudo {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.mapa {
+  border-radius: 4px;
+}
+
+.dados {
+  margin-top: 160px;
+  font-family: Poppins, sans-serif;
+}
+
+.dados li {
+  padding-bottom: 20px ;
+}
+
+.dados li::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 5px;
+  margin-right: 10px;
+  background: #B2595F;
+}

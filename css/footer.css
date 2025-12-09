@@ -1,0 +1,70 @@
+.footer-bg {
+  background: black;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 5fr 5fr 4fr ;
+  color: white;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-size: 1.25em;
+}
+
+.footer h3 {
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.footer-contato {
+  grid-column: 2;
+}
+
+.footer-contato ul {
+  margin-bottom: 32px;
+}
+
+.footer-copy {
+  margin-top: 60px;
+  grid-column: 2;
+  font-size: 0.75em;
+  color: #b2b2b2;
+}
+
+.footer li {
+  margin-bottom: 16px;
+  color: #b2b2b2;
+}
+
+.footer-contato li:nth-child(even)::after {
+      content: "";
+    display: block;
+    max-width: 360px;
+    height: 1px;
+    background:#b2b2b2;
+    margin-top: 16px;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 32px;
+  color: white;
+  width: 100%;
+
+}
+
+.footer-redes img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.logo-footer {
+  margin-left: 240px;
+  margin-top: 120px;
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  object-fit: cover;
+}

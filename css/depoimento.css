@@ -1,0 +1,50 @@
+.depoimento-bg {
+  background: #E0CFA3;
+}
+
+.depoimento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.depoimento img {
+  width: 1850px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+.depoimento-conteudo {
+  font-size: 2em;
+  padding: 40px 40px 80px 80px;
+  align-self: end;
+
+}
+
+.depoimento-conteudo p {
+  max-width: 32ch;
+  font-family: Poppins, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.depoimento p::before {
+  content: "“";
+  left: -50px;
+  top: -20px;
+  font-family: Merriweather;
+}
+
+.depoimento p::after {
+  content: "”";
+  font-family: Merriweather;
+}
+
+.depoimento p::before, .depoimento p::after {
+    font-size: 5rem;
+    color: rgba(0, 0, 0, .5);
+    position: absolute;
+}
