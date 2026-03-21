@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -44,26 +44,59 @@
     <section class="procedimentos" id="procedimentos">
       <h1 class="container">Escolha o seu procedimento</h1>
       <div class="slide-wrapper">
-        <ul>
-          <li><img src="slide/cilios1-2.png" alt="">
-            <h3 class="font-1-xl">Volume Egípcio</h3><span class="font-2-m c8">R$ 125</span>
+        <ul id="procedimentos-lista">
+          <li class="procedimento-item">
+            <img src="slide/cilios.jpeg" class="procedimento-img" alt="">
+            <div class="procedimento-info">
+              <h3 class="font-1-xl">Extensões de Cílios</h3><span class="font-2-m c8">Clique para saber mais ⇽</span>
+            </div>
+            <div class="procedimento-detalhes">
+              <p>Além de praticidade para o dia a dia, as extensões de cílios oferecem um jeito diferente de destacar seus olhos e aumentar sua autoestima.</p>
+              <ul>
+                <p>Efeitos:</p>
+                <li>Efeito Fox</li>
+                <li>Efeito Sirena</li>
+                <li>Brasileiro Padrão e Marrom</li>
+                <li>Efeito Glamour</li>
+                <li>Efeito Bomb 8D</li>
+              </ul>
+            </div>
           </li>
-          <li><img src="slide/brow-lamination-2.png" alt="">
-            <h3 class="font-1-xl">Brow Lamination</h3><span class="font-2-m c8">R$ 120</span>
+          <li class="procedimento-item">
+            <img src="slide/brow.jpeg" class="procedimento-img" alt="">
+            <div class="procedimento-info">
+              <h3 class="font-1-xl">Brow Lamination</h3><span class="font-2-m c8">Clique para saber mais ⇽</span>
+            </div>
+            <div class="procedimento-detalhes">
+              <p>A Brow Lamination Terapêutica leva o procedimento a um novo nível, proporcionando não só cuidado com os fios e um momento de relaxamento, mas também cuidados com a pele.</p>
+              <ul>
+                <li>Durabilidade: 4 a 8 semanas</li>
+                <li>Incluso: Design + Tintura</li>
+              </ul>
+            </div>
           </li>
-          <li><img src="slide/cilios2-1.png" alt="">
-            <h3 class="font-1-xl">Volume Brasileiro</h3><span class="font-2-m c8">R$ 100</span>
+          <li class="procedimento-item">
+            <img src="slide/lashlifiting.jpeg" class="procedimento-img" alt="">
+            <div class="procedimento-info">
+              <h3 class="font-1-xl">Lash Lifting</h3><span class="font-2-m c8">Clique para saber mais ⇽</span>
+            </div>
+            <div class="procedimento-detalhes">
+              <p>Realce a beleza natural do seu olhar. Procedimento que alinha, curva e trata os fios desde a raiz, entregando expressividade por semanas.</p>
+              <ul>
+                <li>Durabilidade: Aproximadamente 30 dias</li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
-      <button onclick="window.open('https://wa.me/5541984815419?text=Ol%C3%A1,%20vim%20do%20site%20e%20gostaria%20de%20marcar%20um%20hor%C3%A1rio', '_blank')" class="procedimento-contato container"><img src="img/whatsapp.svg" alt="">Agendar Agora</button>
+      <button onclick="window.open('https://wa.me/5541984815419?text=Ol%C3%A1,%20gostaria%20de%20marcar%20um%20hor%C3%A1rio', '_blank')" class="procedimento-contato container"><img src="img/whatsapp.svg" alt="">Agendar Agora</button>
     </section>
   </div>
 
   <div class="depoimento-bg">
     <section class="depoimento">
       <div>
-        <img src="img/imagem-depoimento.png" alt="Mulher jovem com extensão de cílios direcionando seu olhar para baixo">
+        <img src="img/imagem-depoimento.png" alt="Mulher jovem com extensÃ£o de cÃ­lios direcionando seu olhar para baixo">
       </div>
       <div class="depoimento-conteudo">
         <blockquote>
@@ -78,8 +111,22 @@
       <h1 class="container">Contato</h1>
       <div class="contato-conteudo">
         <div class="mapa">
-          <img src="img/mapa.png" alt="Mapa com a localização do Studio">
-        </div>
+            <!-- Iframe moderno do Google Maps apuntando para Rua Maria Kuchinar Kloss, 252A -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.048387063686!2d-49.3245453!3d-25.5367605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce30be62ac9ed%3A0x6b40283c748c9bf!2sR.%20Maria%20Kuchinar%20Kloss%2C%20252a%20-%20Curitiba%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="350"
+              style="border:0; border-radius:8px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <!-- Botão auxiliar para abrir mapa direto no app do celular -->
+            <a href="https://maps.app.goo.gl/95THTmFfP1W4Uf6X9" target="_blank" class="btn-mapa">
+              Abrir no Google Maps
+            </a>
+          </div>
         <ul class="dados">
           <li>dellbeautystudio@gmail.com</li>
           <li>+55 (41) 9481-5419</li>
@@ -125,6 +172,15 @@
   </footer>
 
   <script type="module" src="js/main.js"></script>
+  <!-- Botão Flutuante do WhatsApp -->
+  <a href="https://wa.me/5541984815419?text=Oii,%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20procedimentos!" class="whatsapp-flutuante" target="_blank" aria-label="Enviar mensagem no WhatsApp">
+    <img src="img/whatsapp.svg" alt="Ícone do WhatsApp">
+  </a>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
+
+
+

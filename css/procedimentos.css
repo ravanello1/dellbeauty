@@ -1,5 +1,5 @@
 .procedimentos-bg {
-  background: url("../img/image\ 5.png") no-repeat;
+  background: url('../img/image\ 5.png') no-repeat;
 }
 
 .procedimentos {
@@ -36,7 +36,7 @@
 }
 
 .procedimentos h3::before {
-  content: "";
+  content: '';
   display: inline-block;
   height: 8px;
   width: 12px;
@@ -70,10 +70,21 @@
   background-color: #128c7e;
 }
 
+.procedimentos img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease-out;
+}
+
+.procedimentos img:hover {
+  transform: scale(1.05) translateY(8px);
+  cursor: pointer;
+}
+
 @media (max-width: 720px) {
   .procedimentos-bg {
     padding-bottom: 0px;
-    background: url("../img/image\ 5.png") repeat;
+    background: url('../img/image\ 5.png') repeat;
   }
   .procedimentos {
     padding-top: 20px;
@@ -94,3 +105,291 @@
     margin: 20px auto;
   }
 }
+
+/* ======================================= */
+/* MODAL - ESTILO APPLE (MUITO MAIS FLUIDO) */
+/* ======================================= */
+
+.procedimento-item {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.procedimento-detalhes {
+  display: none; /* Esconde os detalhes no fluxo normal da pï¿½gina */
+}
+
+/* Fundo desfocado */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px); /* Reduzido para melhor performance */
+  -webkit-backdrop-filter: blur(8px); /* Reduzido para melhor performance */
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Caixa do Modal */
+.modal-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15); /* Sombra mais leve para pintar */ /* Sombra mais difusa */
+  position: relative;
+  /* Estado inicial com menos distorÃ§Ã£o e menos deslocamento para uma curva mais suave */
+  transform: scale(0.96) translate3d(0, 10px, 0); /* 3D forca a placa de video */`n  will-change: transform, opacity;
+  opacity: 0;
+  /* Curva de animaÃ§Ã£o padrÃ£o da Apple (ease-out-expo/circ misturado) */
+  transition:
+    opacity 0.4s ease,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Quando o modal fica ativo, vai para o tamanho normal suavemente */
+.modal-overlay.ativo .modal-box {
+  transform: scale(1) translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* RESET: Botï¿½o fechar especï¿½fico do modal para nï¿½o pegar o verde do site */
+.modal-overlay button.btn-fechar-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  background: #f1f1f1;
+  color: #555;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.modal-overlay button.btn-fechar-modal:hover {
+  background: #e1e1e1;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Ajustes dos itens injetados dentro do modal */
+.modal-overlay img.procedimento-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  /* Reseta o hover da imagem no modal para nï¿½o mover mais */
+  transform: none !important;
+  pointer-events: none;
+}
+
+.modal-overlay .procedimento-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-overlay h3 {
+  font-family: Poppins, sans-serif;
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+.modal-overlay h3::before {
+  display: none; /* Remove o tracinho vermelho no modal se quiser um visual mais limpo */
+}
+
+.modal-overlay span {
+  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #b2595f;
+}
+
+.modal-overlay .procedimento-detalhes {
+  display: block; /* Aqui a magia acontece: mostra os detalhes apenas no modal */
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  margin-top: 10px;
+  opacity: 0; animation: txtFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+}
+
+.modal-overlay .procedimento-detalhes p {
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.modal-overlay .procedimento-detalhes ul {
+  display: block;
+  padding-left: 20px;
+  margin: 0;
+  max-width: initial;
+}
+
+.modal-overlay .procedimento-detalhes li {
+  font-family: Poppins, sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+body.modal-aberto {
+  overflow: hidden;
+}
+
+@keyframes txtFadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+/* Otimização para celulares e aparelhos mais simples ou com preferência de menos movimento */
+@media (prefers-reduced-motion: reduce), (max-width: 720px) {
+  .modal-overlay {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .modal-box {
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+/* ======================================= */
+/* EXTREME GPU PERFORMANCE OVERRIDES       */
+/* ======================================= */
+
+.modal-box {
+  /* Isola a pintura da janela pro navegador não calcular o site inteiro no fundo */
+  contain: paint layout; 
+  /* Força a aceleração dedicada sem serrilhar as bordas/textos */
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* Sombra ultra-leve de renderizar math-wise (reduz blur de raio muito grande e usa opacidade menor) */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08) !important;
+  /* Animação marginalmente mais rápida para o olho não perceber nenhuma oscilação de frame */
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.modal-overlay {
+  /* No desktop: Menos desfoque, compensado por uma base muito mais preenchida com branco */
+  background: rgba(255, 255, 255, 0.70) !important;
+  backdrop-filter: blur(3px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+}
+
+.modal-overlay img.procedimento-img {
+  /* Joga a imagem pré-renderizada na VRAM antes de animá-la */
+  transform: translate3d(0, 0, 0) !important;
+  backface-visibility: hidden;
+}
+
+/* Redefinição do keyframe pendente para usar cálculo de GPU (translate3d) em vez de CPU (translateY) */
+@keyframes txtFadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Nos celulares ou computadores básicos/limitados o Blur é desativado por completo */
+@media (max-width: 850px), (prefers-reduced-motion: reduce) {
+  .modal-overlay {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    /* Fundo branco fosco sólido sem blur imita o efeito sem fritar o celular */
+    background: rgba(255, 255, 255, 0.96) !important;
+  }
+  .modal-box {
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1) !important;
+  }
+}
+
+
+/* ======================================= */
+/* CONFIGURACAO DO SLIDER FLUIDO NATIVO    */
+/* ======================================= */
+
+.procedimentos ul {
+  display: flex !important;
+  justify-content: flex-start !important;
+  gap: 40px !important;
+  overflow-x: auto !important;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch; 
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0 20px 40px 20px !important;
+}
+
+.procedimentos ul::-webkit-scrollbar {
+  display: none;
+}
+
+.procedimento-item {
+  flex: 0 0 auto !important; 
+  width: 85vw !important; 
+  max-width: 320px !important; 
+  scroll-snap-align: center;
+}
+
+@media (min-width: 1050px) {
+  .procedimentos ul {
+    justify-content: center !important;
+  }
+}
+

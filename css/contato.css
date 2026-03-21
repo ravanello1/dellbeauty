@@ -15,7 +15,7 @@
 }
 
 .dados {
-  margin-top: 160px;
+  margin-top: 20px;
   font-family: Poppins, sans-serif;
 }
 
@@ -41,3 +41,53 @@
     margin-top: 30px;
   }
 }
+
+
+/* ======================================= */
+/* ESTILOS DO NOVO MAPA DO GOOGLE          */
+/* ======================================= */
+
+.contato-conteudo {
+  align-items: center; /* Centraliza verticalmente o mapa e o texto */
+}
+
+.mapa {
+  border-radius: 8px;
+  flex: 1; /* Cresce mas divide espaco */
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden; /* Corta cantos da imagem que as vezes vaza */
+}
+
+.mapa iframe {
+  width: 100%;
+  box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+}
+
+.btn-mapa {
+  display: block; /* Ocupa a largura util */
+  background-color: #B2595F; /* Cor principal de destaque da sua marca */
+  color: #FFF;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-mapa:hover {
+  background-color: #92454b;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .mapa {
+    max-width: 100%; /* No celular o mapa ocupa a tela toda */
+  }
+}
+

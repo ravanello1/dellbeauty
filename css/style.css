@@ -1,8 +1,71 @@
+@import 'procedimentos.css';
 @import 'geral.css';
 @import 'header.css';
 @import 'intro.css';
 @import 'tipografia.css';
-@import 'procedimentos.css';
 @import 'depoimento.css';
 @import 'contato.css';
 @import 'footer.css';
+
+/* ======================================= */
+/* BOTÃO FLUTUANTE DO WHATSAPP             */
+/* ======================================= */
+
+.whatsapp-flutuante {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* Verde oficial WhatsApp */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
+  /* Efeito de pulse contínuo (Glow) */
+  animation: pulse-glow 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-flutuante img {
+  width: 35px;
+  height: auto;
+  /* Icone branco inves de preto/cinza */
+  filter: brightness(0) invert(1);
+}
+
+.whatsapp-flutuante:hover {
+  transform: scale(1.1);
+  background-color: #128c7e;
+  animation: none; /* Para de piscar caso a pessoa tenha focado o mouse */
+}
+
+/* Criando o efeito Glow Dinâmico */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Ajustes no celular para não atrapalhar o toque na tela onde as pessoas põem a mão */
+@media (max-width: 720px) {
+  .whatsapp-flutuante {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+  }
+  .whatsapp-flutuante img {
+    width: 30px;
+  }
+}
+
