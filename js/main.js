@@ -9,12 +9,12 @@ if (procedimentosLista.length > 0) {
   const modalBox = document.createElement('div');
   modalBox.classList.add('modal-box');
 
-  // Bot�o de fechar em fomato de X decente (entidade HTML)
+  // Botï¿½o de fechar em fomato de X decente (entidade HTML)
   const btnFechar = document.createElement('button');
   btnFechar.classList.add('btn-fechar-modal');
   btnFechar.innerHTML = '&#10005;';
 
-  // Container para o conte�do clonado
+  // Container para o conteï¿½do clonado
   const modalConteudo = document.createElement('div');
   modalConteudo.classList.add('modal-conteudo');
 
@@ -23,11 +23,11 @@ if (procedimentosLista.length > 0) {
   modalOverlay.appendChild(modalBox);
   document.body.appendChild(modalOverlay);
 
-  // Fun��o para fechar com anima��o
+  // Funï¿½ï¿½o para fechar com animaï¿½ï¿½o
   const fecharModal = () => {
     modalOverlay.classList.remove('ativo');
     document.body.classList.remove('modal-aberto');
-    // Aguarda a anima��o de sa�da terminar para limpar o HTML (evita um 'pulo' no visual)
+    // Aguarda a animaï¿½ï¿½o de saï¿½da terminar para limpar o HTML (evita um 'pulo' no visual)
     setTimeout(() => {
       modalConteudo.innerHTML = '';
     }, 450);
@@ -42,12 +42,12 @@ if (procedimentosLista.length > 0) {
   // Evento de abrir ao clicar nos itens
   procedimentosLista.forEach((item) => {
     item.addEventListener('click', () => {
-      // Clona o conte�do do item exato que foi clicado para dentro do modal
+      // Clona o conteï¿½do do item exato que foi clicado para dentro do modal
       modalConteudo.innerHTML = item.innerHTML;
 
       // --- Logica do Link do WhatsApp customizado ---
       const h3 = item.querySelector('h3');
-      const nomeProcedimento = h3 ? h3.innerText : 'seu servi�o';
+      const nomeProcedimento = h3 ? h3.innerText : 'seu serviço';
       const btnLink = modalConteudo.querySelector('.procedimento-info span');
       
       if (btnLink) {
@@ -60,15 +60,16 @@ if (procedimentosLista.length > 0) {
         btnLink.addEventListener('click', (e) => {
           e.stopPropagation(); // Evitar comportamentos nao desejados
           const mensagem = encodeURIComponent('Oii, gostaria de saber mais sobre ' + nomeProcedimento);
-          // O mesmo numero usado no botao do site: 5541984815419
-          window.open('https://wa.me/5541984815419?text=' + mensagem, '_blank');
+          const url = 'https://wa.me/5541984815419?text=' + mensagem;
+          // Rastreia conversão no Google Ads antes de redirecionar
+          gtag_report_conversion(url);
         });
       }
 
-      // Força o navegador a recalcular o layout (reflow) antes de engatilhar a transição
+      // ForÃ§a o navegador a recalcular o layout (reflow) antes de engatilhar a transiÃ§Ã£o
       void modalBox.offsetWidth;
 
-      // Mostra o modal no frame exato (garante a animação super fluida)
+      // Mostra o modal no frame exato (garante a animaÃ§Ã£o super fluida)
       requestAnimationFrame(() => {
         modalOverlay.classList.add('ativo');
         document.body.classList.add('modal-aberto');
